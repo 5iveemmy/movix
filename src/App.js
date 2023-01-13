@@ -1,8 +1,12 @@
+import GlobalStyle from "./globalStyles";
+
 function App() {
   return (
-    <div className="App">
-      <p>new</p>
-    </div>
+    <>
+      {" "}
+      <GlobalStyle />
+      <h1>Welcome to Movix</h1>
+    </>
   );
 }
 
