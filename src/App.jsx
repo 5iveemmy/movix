@@ -1,12 +1,12 @@
-import Auth from "./components/Auth/Auth";
 import GlobalStyle from "./globalStyles";
+import Register from "./screens/auth/Register";
 
 function App() {
   return (
     <>
       {" "}
       <GlobalStyle />
-      <Auth />
+      <Register />
     </>
   );
 }
