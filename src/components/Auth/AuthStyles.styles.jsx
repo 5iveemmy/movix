@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AiOutlineEye } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -51,6 +52,7 @@ export const StyledEye = styled(AiOutlineEye)`
   position: absolute;
   top: 37%;
   opacity: 0.5;
+  right: 10px;
 `;
 
 export const Input = styled.input`
@@ -93,7 +95,8 @@ export const AuthFooterPara = styled.p`
   color: #747474;
 `;
 
-export const Span = styled.span`
+export const StyledLink = styled(Link)`
   color: #b91c1c;
   cursor: pointer;
+  text-decoration: none;
 `;

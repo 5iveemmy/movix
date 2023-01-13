@@ -2,7 +2,7 @@ import React from "react";
 import * as S from "./AuthStyles.styles";
 import movix from "../../assets/images/movix.svg";
 
-const Auth = () => {
+const Auth = ({ login }) => {
   return (
     <S.Container>
       <S.Wrapper>
@@ -12,18 +12,26 @@ const Auth = () => {
           <S.HeaderPara>Please sign-up to start your experience</S.HeaderPara>
         </S.Header>
         <S.InputContainer>
-          <S.Input placeholder="Full Name" type="name" />
+          {!login && <S.Input placeholder="Full Name" type="name" />}
           <S.Input placeholder="Email" type="email" />
           <S.PasswordDiv>
             <S.Input placeholder="Password" type="password" />
             <S.StyledEye />
           </S.PasswordDiv>
         </S.InputContainer>
-        <S.Button>Register</S.Button>
+        <S.Button>{login ? "Login" : "Register"}</S.Button>
         <S.AuthFooter>
-          <S.AuthFooterPara>
-            Already have an account? <S.Span>Login</S.Span>
-          </S.AuthFooterPara>
+          {login ? (
+            <S.AuthFooterPara>
+              Don't have an account?
+              <S.StyledLink to="/register"> Register</S.StyledLink>
+            </S.AuthFooterPara>
+          ) : (
+            <S.AuthFooterPara>
+              Already have an account?
+              <S.StyledLink to="/login"> Login</S.StyledLink>
+            </S.AuthFooterPara>
+          )}
         </S.AuthFooter>
       </S.Wrapper>
     </S.Container>
