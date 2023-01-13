@@ -1,3 +1,4 @@
+import Auth from "./components/Auth/Auth";
 import GlobalStyle from "./globalStyles";
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
     <>
       {" "}
       <GlobalStyle />
-      <h1>Welcome to Movix</h1>
+      <Auth />
     </>
   );
 }
