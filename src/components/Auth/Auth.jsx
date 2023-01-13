@@ -1,12 +1,12 @@
 import React from "react";
 import * as S from "./AuthStyles.styles";
-import movix from "../../assets/images/movix.svg";
+import authLogo from "../../assets/images/authLogo.svg";
 
 const Auth = ({ login }) => {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.Image src={movix} alt="logo" />
+        <S.Image src={authLogo} alt="logo" />
         <S.Header>
           <S.HeaderText>Hi, Welcome</S.HeaderText>
           <S.HeaderPara>Please sign-up to start your experience</S.HeaderPara>
