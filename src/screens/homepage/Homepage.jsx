@@ -7,6 +7,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   return (
@@ -41,6 +42,7 @@ const HomePage = () => {
       <FeaturedMovies />
       <NewArrival />
       <FeaturedCast />
+      <Footer />
     </>
   );
 };
