@@ -4,7 +4,7 @@ import poster from "../../assets/images/poster.svg";
 import imdb from "../../assets/images/imdb.svg";
 import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
-import FeaturedMovie from "../../components/FeaturedMovie/FeaturedMovie";
+import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 
 const HomePage = () => {
   return (
@@ -36,7 +36,7 @@ const HomePage = () => {
           </S.DescriptionBox>
         </S.Wrapper>
       </S.Container>
-      <FeaturedMovie />{" "}
+      <FeaturedMovies />{" "}
     </>
   );
 };
