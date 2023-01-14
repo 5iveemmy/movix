@@ -1,12 +1,12 @@
 import React from "react";
 import MovieCategory from "../MoviesCategory/MovieCategory";
 
-const FeaturedMovies = () => {
+const NewArrival = () => {
   return (
     <>
-      <MovieCategory header="Featured Movie" />
+      <MovieCategory header="New Arrival" />
     </>
   );
 };
 
-export default FeaturedMovies;
+export default NewArrival;

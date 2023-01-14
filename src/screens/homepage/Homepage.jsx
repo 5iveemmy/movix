@@ -5,6 +5,7 @@ import imdb from "../../assets/images/imdb.svg";
 import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
 import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
+import NewArrival from "../../components/NewArrival/NewArrival";
 
 const HomePage = () => {
   return (
@@ -37,6 +38,7 @@ const HomePage = () => {
         </S.Wrapper>
       </S.Container>
       <FeaturedMovies />
+      <NewArrival />
     </>
   );
 };
