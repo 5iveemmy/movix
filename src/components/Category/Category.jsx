@@ -1,8 +1,8 @@
 import React from "react";
-import * as S from "./MovieCategory.styles";
+import * as S from "./Category.styles";
 import MovieCards from "../MovieCards/MovieCards";
 
-const MovieCategory = ({ header }) => {
+const Category = ({ header }) => {
   return (
     <S.Container>
       <S.HeaderDiv>
@@ -17,4 +17,4 @@ const MovieCategory = ({ header }) => {
   );
 };
 
-export default MovieCategory;
+export default Category;

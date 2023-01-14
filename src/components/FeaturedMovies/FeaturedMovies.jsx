@@ -1,10 +1,10 @@
 import React from "react";
-import MovieCategory from "../MoviesCategory/MovieCategory";
+import Category from "../Category/Category";
 
 const FeaturedMovies = () => {
   return (
     <>
-      <MovieCategory header="Featured Movie" />
+      <Category header="Featured Movie" />
     </>
   );
 };
