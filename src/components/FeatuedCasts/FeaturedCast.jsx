@@ -3,9 +3,9 @@ import Category from "../Category/Category";
 import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
 import Card from "../Card/Card";
 
-const NewArrival = () => {
+const FeaturedCast = () => {
   return (
-    <Category header="New Arrival">
+    <Category header="Featured Casts">
       <HorizontalSlider>
         <Card />
         <Card />
@@ -18,4 +18,4 @@ const NewArrival = () => {
   );
 };
 
-export default NewArrival;
+export default FeaturedCast;

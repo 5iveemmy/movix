@@ -1,8 +1,7 @@
 import React from "react";
 import * as S from "./Category.styles";
-import MovieCards from "../MovieCards/MovieCards";
 
-const Category = ({ header }) => {
+const Category = ({ header, children }) => {
   return (
     <S.Container>
       <S.HeaderDiv>
@@ -12,7 +11,7 @@ const Category = ({ header }) => {
           <S.StyledArrow />
         </S.SeeMoreDiv>
       </S.HeaderDiv>
-      <MovieCards />
+      {children}
     </S.Container>
   );
 };

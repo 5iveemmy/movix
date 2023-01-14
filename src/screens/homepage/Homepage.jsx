@@ -6,6 +6,7 @@ import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
 import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
+import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 
 const HomePage = () => {
   return (
@@ -39,6 +40,7 @@ const HomePage = () => {
       </S.Container>
       <FeaturedMovies />
       <NewArrival />
+      <FeaturedCast />
     </>
   );
 };
