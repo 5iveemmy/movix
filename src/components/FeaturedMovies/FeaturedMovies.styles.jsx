@@ -14,6 +14,7 @@ export const HeaderDiv = styled.div`
 
 export const HeaderText = styled.h1`
   font-size: 36px;
+  padding-left: 20px;
   font-weight: 700;
   line-height: 47px;
 `;

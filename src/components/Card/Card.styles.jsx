@@ -1,16 +1,14 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  width: 250px;
-`;
+export const Container = styled.div``;
 
 export const Wrapper = styled.div`
   width: 100%;
   height: 370px;
-  background-repeat: no-repeat;
   background-size: cover;
   padding: 16px;
   position: relative;
+  background-position: center;
 `;
 
 export const Image = styled.img`

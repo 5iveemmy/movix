@@ -1,17 +1,17 @@
 import React from "react";
-import * as S from "./MovieCards.styles";
 import Card from "../Card/Card";
+import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
 
 const MovieCards = () => {
   return (
-    <S.Container>
-      <S.StyledBackArrow />
+    <HorizontalSlider>
       <Card />
       <Card />
       <Card />
       <Card />
-      <S.StyledForwardArrow />
-    </S.Container>
+      <Card />
+      <Card />
+    </HorizontalSlider>
   );
 };
 

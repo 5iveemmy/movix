@@ -36,7 +36,7 @@ const HomePage = () => {
           </S.DescriptionBox>
         </S.Wrapper>
       </S.Container>
-      <FeaturedMovies />{" "}
+      <FeaturedMovies />
     </>
   );
 };
