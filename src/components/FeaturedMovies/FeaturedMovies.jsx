@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./FeaturedMovies.styles";
+import MovieCards from "../MovieCards/MovieCards";
 
 const FeaturedMovies = () => {
   return (
@@ -11,6 +12,7 @@ const FeaturedMovies = () => {
           <S.StyledArrow />
         </S.SeeMoreDiv>
       </S.HeaderDiv>
+      <MovieCards />
     </S.Container>
   );
 };

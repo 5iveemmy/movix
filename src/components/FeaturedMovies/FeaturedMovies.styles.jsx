@@ -9,6 +9,7 @@ export const HeaderDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 34px;
 `;
 
 export const HeaderText = styled.h1`
