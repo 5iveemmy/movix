@@ -6,6 +6,8 @@ import twitter from "../../assets/images/twitter.svg";
 import youtube from "../../assets/images/youtube.svg";
 
 const Footer = () => {
+  let date = new Date().getFullYear();
+
   return (
     <S.Container>
       <S.FlexContainer>
@@ -19,7 +21,7 @@ const Footer = () => {
         <S.Text>Privacy & Policy</S.Text>
         <S.Text>Press Room</S.Text>
       </S.FlexContainer>
-      <S.CopyRight> © 2021 Movix</S.CopyRight>
+      <S.CopyRight> © {date} Movix</S.CopyRight>
     </S.Container>
   );
 };
