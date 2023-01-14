@@ -6,7 +6,6 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 80px;
-  padding: 22px 6.597% 0px 4.02%;
 `;
 
 export const Div = styled.div`
