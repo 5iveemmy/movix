@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   margin: 292px 44.375% 221px 44.375%;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;

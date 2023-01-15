@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./HomePage.styles";
+import * as S from "./Homepage.styles";
 import poster from "../../assets/images/poster.svg";
 import imdb from "../../assets/images/imdb.svg";
 import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
@@ -9,7 +9,7 @@ import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
 
-const HomePage = () => {
+const Homepage = () => {
   return (
     <>
       <S.Container style={{ backgroundImage: `url('${poster}')` }}>
@@ -47,4 +47,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Homepage;
