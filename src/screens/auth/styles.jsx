@@ -53,6 +53,7 @@ export const Eye = styled.button`
   opacity: 0.5;
   right: 10px;
   border: none;
+  cursor: pointer;
 `;
 
 export const Input = styled.input`

@@ -22,7 +22,8 @@ const Login = () => {
       .catch((err) => setError(err.message));
   };
 
-  const togglePassword = () => {
+  const togglePassword = (e) => {
+    e.preventDefault();
     if (passwordType === "password") {
       setPasswordType("text");
       return;
@@ -50,6 +51,7 @@ const Login = () => {
             <S.Input
               placeholder="Password"
               type={passwordType}
+              value={password}
               required
               onChange={(e) => setPassword(e.target.value)}
             />

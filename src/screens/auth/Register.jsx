@@ -26,7 +26,8 @@ const Register = () => {
     setPassword("");
   };
 
-  const togglePassword = () => {
+  const togglePassword = (e) => {
+    e.preventDefault();
     if (passwordType === "password") {
       setPasswordType("text");
       return;
@@ -55,6 +56,7 @@ const Register = () => {
             <S.Input
               placeholder="Password"
               type={passwordType}
+              value={password}
               required
               onChange={(e) => setPassword(e.target.value)}
             />
