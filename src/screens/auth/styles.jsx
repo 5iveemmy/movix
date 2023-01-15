@@ -100,3 +100,9 @@ export const StyledLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
 `;
+
+export const Error = styled.p`
+  color: #b91c1c;
+  font-size: 12px;
+  padding-top: 20px;
+`;

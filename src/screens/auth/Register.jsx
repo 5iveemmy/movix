@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
 import { auth } from "../../auth/Firebase";
@@ -8,17 +9,17 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const register = (e) => {
     e.preventDefault();
     setError("");
     // Create a new user with email and password using firebase
     createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
+        navigate("/login");
       })
       .catch((err) => setError(err.message));
-
     setEmail("");
     setPassword("");
   };
@@ -50,12 +51,12 @@ const Register = () => {
           </S.PasswordDiv>
         </S.InputContainer>
         <S.Button type="submit">Register</S.Button>
+        {error && <S.Error>{error}</S.Error>}
         <S.AuthFooter>
           <S.AuthFooterPara>
             Already have an account?
             <S.StyledLink to="/login"> Login</S.StyledLink>
           </S.AuthFooterPara>
-          {error && <p>{error}</p>}
         </S.AuthFooter>
       </S.Wrapper>
     </S.Container>
