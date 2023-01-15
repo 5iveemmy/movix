@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./Homepage.styles";
 import poster from "../../assets/images/poster.svg";
 import imdb from "../../assets/images/imdb.svg";
@@ -8,8 +8,36 @@ import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
+import { UserAuth } from "../auth/UserAuth";
+import { doc, getDoc } from "@firebase/firestore";
+import { db } from "../../auth/Firebase";
+import { useNavigate } from "react-router";
 
 const Homepage = () => {
+  const [name, setName] = useState("");
+
+  const { currentUser } = UserAuth();
+  let navigate = useNavigate();
+
+  let userId = currentUser.uid;
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const docRef = doc(db, "users", userId);
+
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setName(docSnap.data());
+      } else {
+        // doc.data() will be undefined in this case
+        navigate("/username");
+      }
+    };
+    fetchItems();
+  }, [userId]);
+
+  console.log(name.name, "user");
   return (
     <>
       <S.Container style={{ backgroundImage: `url('${poster}')` }}>

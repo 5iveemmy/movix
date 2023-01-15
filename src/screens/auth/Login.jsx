@@ -5,12 +5,12 @@ import { signInWithEmailAndPassword } from "@firebase/auth";
 import { auth } from "../../auth/Firebase";
 import { useNavigate } from "react-router";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
-  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const login = (e) => {
@@ -19,7 +19,7 @@ const Login = () => {
       .then(() => {
         navigate("/home");
       })
-      .catch((err) => setError(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   const togglePassword = (e) => {
@@ -71,7 +71,6 @@ const Login = () => {
             <S.StyledLink to="/"> Register</S.StyledLink>
           </S.AuthFooterPara>
         </S.AuthFooter>
-        {error && <S.Error>{error}</S.Error>}
       </S.Wrapper>
     </S.Container>
   );
