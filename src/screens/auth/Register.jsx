@@ -4,10 +4,12 @@ import * as S from "./styles";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
 import { auth } from "../../auth/Firebase";
 import authLogo from "../../assets/images/authLogo.svg";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordType, setPasswordType] = useState("password");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -23,6 +25,15 @@ const Register = () => {
     setEmail("");
     setPassword("");
   };
+
+  const togglePassword = () => {
+    if (passwordType === "password") {
+      setPasswordType("text");
+      return;
+    }
+    setPasswordType("password");
+  };
+
   return (
     <S.Container>
       <S.Wrapper onSubmit={register}>
@@ -43,11 +54,17 @@ const Register = () => {
           <S.PasswordDiv>
             <S.Input
               placeholder="Password"
-              type="password"
+              type={passwordType}
               required
               onChange={(e) => setPassword(e.target.value)}
             />
-            <S.StyledEye />
+            <S.Eye onClick={togglePassword}>
+              {passwordType === "password" ? (
+                <AiOutlineEye />
+              ) : (
+                <AiOutlineEyeInvisible />
+              )}
+            </S.Eye>
           </S.PasswordDiv>
         </S.InputContainer>
         <S.Button type="submit">Register</S.Button>
