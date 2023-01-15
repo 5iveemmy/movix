@@ -3,27 +3,36 @@ import Category from "../Category/Category";
 import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
 import keanu from "../../assets/images/keanu.svg";
 import * as S from "./FeaturedCast.styles";
+import { useQuery, useQueryClient } from "react-query";
 
 const FeaturedCast = () => {
+  const queryClient = useQueryClient();
+  const queryData = queryClient.getQueryData("data");
+  const movieId = queryData.results[0].id;
+  const IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+  const API_URL =
+    `https://api.themoviedb.org/3/movie/${movieId}/credits?` +
+    process.env.REACT_APP_API_KEY;
+
+  const { data } = useQuery(["casts"], async () => {
+    const data = await (await fetch(`${API_URL}`)).json();
+    return data;
+  });
+
+  console.log(data, "data");
+
   return (
     <Category header="Featured Casts">
       <HorizontalSlider>
-        <S.Container>
-          <S.Image src={keanu} alt="" />
-          <S.Name>Keanu Reeves</S.Name>
-        </S.Container>
-        <S.Container>
-          <S.Image src={keanu} alt="" />
-          <S.Name>Keanu Reeves</S.Name>
-        </S.Container>
-        <S.Container>
-          <S.Image src={keanu} alt="" />
-          <S.Name>Keanu Reeves</S.Name>
-        </S.Container>
-        <S.Container>
-          <S.Image src={keanu} alt="" />
-          <S.Name>Keanu Reeves</S.Name>
-        </S.Container>
+        {data?.cast?.map(({ name, profile_path }) => (
+          <S.Container>
+            <div>
+              <S.Image src={IMG_URL + profile_path} alt="" />
+            </div>
+            <S.Name>{name}</S.Name>
+          </S.Container>
+        ))}
       </HorizontalSlider>
     </Category>
   );

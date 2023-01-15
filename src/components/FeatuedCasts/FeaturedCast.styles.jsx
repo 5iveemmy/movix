@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  width: 250px;
+`;
 
-export const Image = styled.img``;
+export const Image = styled.img`
+  width: 100%;
+  height: 370px;
+`;
 
 export const Name = styled.p`
   font-size: 18px;

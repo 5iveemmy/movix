@@ -8,7 +8,6 @@ import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
 import { useQuery } from "react-query";
-// import axios from "axios";
 
 const Homepage = () => {
   const API_URL =
@@ -21,18 +20,6 @@ const Homepage = () => {
   });
 
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
-
-  // const [] = useQueries({
-  //   queries: [
-  //     {
-  //       queryKey: ['data'],
-  //       queryFn: () =>
-  //         axios
-  //           .get("https://api.themoviedb.org/3/movie/now_playing?")
-  //       .then((res) => res.data)
-  //     }
-  //   ]
-  // })
 
   const moviePoster = data?.results[0]?.poster_path;
 
