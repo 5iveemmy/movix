@@ -7,6 +7,7 @@ import { AuthProvider } from "./auth/AuthContext";
 import { useEffect, useState } from "react";
 import { onAuthStateChanged } from "@firebase/auth";
 import { auth } from "./auth/Firebase";
+import { PrivateRoute } from "./PrivateRoute";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -24,7 +25,14 @@ function App() {
         <Routes>
           <Route path="/" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Homepage />} />
+          <Route
+            path="/home"
+            element={
+              <PrivateRoute>
+                <Homepage />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
