@@ -23,6 +23,7 @@ const FeaturedMovies = () => {
             img={poster_path}
             rating={vote_average}
             key={id}
+            id={id}
           />
         ))}
       </HorizontalSlider>

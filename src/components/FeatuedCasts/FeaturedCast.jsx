@@ -1,14 +1,13 @@
 import React from "react";
 import Category from "../Category/Category";
 import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
-import keanu from "../../assets/images/keanu.svg";
 import * as S from "./FeaturedCast.styles";
 import { useQuery, useQueryClient } from "react-query";
 
 const FeaturedCast = () => {
   const queryClient = useQueryClient();
   const queryData = queryClient.getQueryData("data");
-  const movieId = queryData.results[0].id;
+  const movieId = queryData?.results[0]?.id;
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
   const API_URL =
@@ -19,8 +18,6 @@ const FeaturedCast = () => {
     const data = await (await fetch(`${API_URL}`)).json();
     return data;
   });
-
-  console.log(data, "data");
 
   return (
     <Category header="Featured Casts">
