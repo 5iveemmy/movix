@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { AiOutlineEye } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -8,7 +7,7 @@ export const Container = styled.div`
   justify-content: center;
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
   margin: 292px 44.375% 221px 44.375%;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 10px;
@@ -48,11 +47,13 @@ export const PasswordDiv = styled.div`
   position: relative;
 `;
 
-export const StyledEye = styled(AiOutlineEye)`
+export const Eye = styled.button`
   position: absolute;
   top: 37%;
   opacity: 0.5;
   right: 10px;
+  border: none;
+  cursor: pointer;
 `;
 
 export const Input = styled.input`
@@ -91,6 +92,7 @@ export const AuthFooterPara = styled.p`
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
+
   text-align: center;
   color: #747474;
 `;
