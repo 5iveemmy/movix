@@ -31,6 +31,7 @@ export const Input = styled.input`
   width: 100%;
   border: 2px solid #d1d5db;
   border-radius: 6px;
+  color: #f7f7f7;
   background: none;
 
   &::placeholder {

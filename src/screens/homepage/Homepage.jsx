@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./Homepage.styles";
-import poster from "../../assets/images/poster.svg";
 import imdb from "../../assets/images/imdb.svg";
 import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
@@ -9,6 +8,7 @@ import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
 import { useQuery } from "react-query";
+// import axios from "axios";
 
 const Homepage = () => {
   const API_URL =
@@ -19,13 +19,23 @@ const Homepage = () => {
     const data = await (await fetch(`${API_URL}`)).json();
     return data;
   });
+
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-  console.log(data, "this is data");
-
-  console.log(data?.results[0]?.poster_path, "this is results");
+  // const [] = useQueries({
+  //   queries: [
+  //     {
+  //       queryKey: ['data'],
+  //       queryFn: () =>
+  //         axios
+  //           .get("https://api.themoviedb.org/3/movie/now_playing?")
+  //       .then((res) => res.data)
+  //     }
+  //   ]
+  // })
 
   const moviePoster = data?.results[0]?.poster_path;
+
   return (
     <>
       <S.Container
@@ -40,7 +50,7 @@ const Homepage = () => {
             <S.RatingsContainer>
               <S.Ratings>
                 <S.Image src={imdb} alt="Imdb" />
-                <S.RateNumber>{data?.results[0].vote_average}</S.RateNumber>
+                <S.RateNumber>{data?.results[0]?.vote_average}</S.RateNumber>
               </S.Ratings>
               <S.Ratings>
                 <S.Image src={rottenTomatoes} alt="Rotten Tomatoes" />
