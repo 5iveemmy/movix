@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
+import { PrivateRoute } from "./PrivateRoute";
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
             <Route
               path="/home"
               element={
-                // <PrivateRoute>
-                <Homepage />
-                // </PrivateRoute>
+                <PrivateRoute>
+                  <Homepage />
+                </PrivateRoute>
               }
             />
           </Routes>

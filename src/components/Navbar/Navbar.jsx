@@ -28,7 +28,7 @@ const Navbar = () => {
       }
     };
     fetchItems();
-  }, [userId]);
+  });
 
   console.log(name.name, "user");
   return (
