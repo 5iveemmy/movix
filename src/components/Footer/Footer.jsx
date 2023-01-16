@@ -16,11 +16,11 @@ const Footer = () => {
         <S.Icon src={twitter} alt="twitter" />
         <S.Icon src={youtube} alt="Youtube" />
       </S.FlexContainer>
-      <S.FlexContainer>
+      <S.ListContainer>
         <S.Text>Conditions of Use</S.Text>
         <S.Text>Privacy & Policy</S.Text>
         <S.Text>Press Room</S.Text>
-      </S.FlexContainer>
+      </S.ListContainer>
       <S.CopyRight> © {date} Movix</S.CopyRight>
     </S.Container>
   );

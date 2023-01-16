@@ -15,6 +15,17 @@ export const FlexContainer = styled.div`
   gap: 48px;
 `;
 
+export const ListContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
 export const Icon = styled.img``;
 
 export const Text = styled.p`
