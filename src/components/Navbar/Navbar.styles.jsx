@@ -12,6 +12,13 @@ export const Container = styled.div`
   }
 `;
 
+export const IconDiv = styled.div`
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  position: relative;
+`;
+
 export const Div = styled.div`
   display: flex;
   gap: 24px;

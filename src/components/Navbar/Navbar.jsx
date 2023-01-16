@@ -43,10 +43,10 @@ const Navbar = () => {
 
   return (
     <S.Container>
-      <S.Div>
+      <S.IconDiv>
         <S.Image src={movixLogo} alt="movix logo" />
         <S.Movix>Movix</S.Movix>
-      </S.Div>
+      </S.IconDiv>
       <S.SearchContainer>
         <S.Input
           type="text"
