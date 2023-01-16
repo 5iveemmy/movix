@@ -1,7 +1,7 @@
 import React from "react";
 import Category from "../Category/Category";
 import HorizontalSlider from "../HorizontalSlider/HorizontalSlider";
-import * as S from "./FeaturedCast.styles";
+import * as S from "./styles";
 import { useQuery, useQueryClient } from "react-query";
 
 const FeaturedCast = () => {

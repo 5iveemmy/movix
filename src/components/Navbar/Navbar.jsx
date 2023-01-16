@@ -20,7 +20,7 @@ const Navbar = () => {
   const SEARCH_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?${process.env.REACT_APP_API_KEY}&query=${value}`;
 
   useQuery(
-    ["movies", "value"],
+    ["movies"],
     async () => {
       const data = await (await fetch(`${SEARCH_MOVIE_URL}`)).json();
       setMovies(data);

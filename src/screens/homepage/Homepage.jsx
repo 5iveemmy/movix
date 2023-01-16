@@ -5,9 +5,10 @@ import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
 import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
-import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
+import FeaturedCast from "../../components/FeaturedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
 import { useQuery } from "react-query";
+import ExclusiveVideos from "../../components/ExclusiveVideos/ExclusiveVideos";
 
 const Homepage = () => {
   const API_URL =
@@ -56,6 +57,7 @@ const Homepage = () => {
       </S.Container>
       <FeaturedMovies />
       <NewArrival />
+      <ExclusiveVideos />
       <FeaturedCast />
       <Footer />
     </>
