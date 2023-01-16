@@ -5,14 +5,14 @@ import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
 import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
-import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
+import FeaturedCast from "../../components/FeaturedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
 import { useQuery } from "react-query";
+import ExclusiveVideos from "../../components/ExclusiveVideos/ExclusiveVideos";
 
 const Homepage = () => {
   const API_URL =
-    "https://api.themoviedb.org/3/movie/now_playing?" +
-    process.env.REACT_APP_API_KEY;
+    "https://api.themoviedb.org/3/movie/now_playing?api_key=61dab464da90e05f4f4c3a6362670387";
 
   const { data } = useQuery(["data"], async () => {
     const data = await (await fetch(`${API_URL}`)).json();
@@ -56,6 +56,7 @@ const Homepage = () => {
       </S.Container>
       <FeaturedMovies />
       <NewArrival />
+      <ExclusiveVideos />
       <FeaturedCast />
       <Footer />
     </>
