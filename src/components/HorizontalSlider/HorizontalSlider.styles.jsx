@@ -27,7 +27,16 @@ export const HorizontalSliderItems = styled.div`
     min-width: calc((100% - 18%) / 4);
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 960px) {
+    transform: translateX(-${(p) => (p.current * 102.5) / 3}%);
+
+    & > * {
+      width: calc((100% - 10%) / 3);
+      min-width: calc((100% - 10%) / 3);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
     transform: translateX(-${(p) => p.current * 102.5}%);
 
     & > * {

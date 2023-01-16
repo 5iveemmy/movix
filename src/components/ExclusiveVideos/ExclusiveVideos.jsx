@@ -18,6 +18,10 @@ const exclusiveData = [
     title: "The Suicide Squad: John Cena Interview",
   },
   {
+    image: suicide,
+    title: "The Suicide Squad",
+  },
+  {
     image: will,
     title: "Will there be a new era of horror movie?",
   },
@@ -30,7 +34,7 @@ const ExclusiveVideos = () => {
         {exclusiveData.map(({ image, title }) => (
           <S.Container exclusive key={image}>
             <div>
-              <S.Image src={image} alt="" />
+              <S.Image src={image} alt="" exclusive />
             </div>
             <S.Name>{title}</S.Name>
           </S.Container>

@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: ${({ exclusive }) => (exclusive ? "450px" : "250px")};
-  /* flex-direction: ${({ imgStart }) => (imgStart ? "row-reverse" : "row")}; */
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 370px;
+  object-fit: ${({ exclusive }) => (exclusive ? "none" : "cover")};
 `;
 
 export const Name = styled.p`

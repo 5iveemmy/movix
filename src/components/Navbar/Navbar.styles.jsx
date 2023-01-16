@@ -6,6 +6,10 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 80px;
+
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Div = styled.div`
@@ -13,6 +17,12 @@ export const Div = styled.div`
   gap: 24px;
   align-items: center;
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    width: 100%;
+    padding-top: 12px;
+  }
 `;
 
 export const SearchContainer = styled.div`
