@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
 import { createUserWithEmailAndPassword } from "@firebase/auth";
-import { auth, db } from "../../auth/Firebase";
+import { auth } from "../../auth/Firebase";
 import authLogo from "../../assets/images/authLogo.svg";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import { doc, setDoc } from "@firebase/firestore";
 import { login } from "../../store/userSlice";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
@@ -37,21 +36,13 @@ const Register = () => {
       try {
         await createUserWithEmailAndPassword(auth, email, password).then(
           async (user) => {
-            let userId = user.user.uid;
-
-            let userInfo = {
-              name,
-              email,
-              uid: userId,
-            };
-
-            await setDoc(doc(db, "users", userId), userInfo);
             dispatch(
               login({
                 email: user.user.email,
                 uid: user.user.uid,
                 name: user.user.name,
-              })
+              }),
+              window.localStorage.setItem("displayName", name)
             );
           }
         );

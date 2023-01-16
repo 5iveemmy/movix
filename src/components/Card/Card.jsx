@@ -12,7 +12,7 @@ const Card = ({ title, img, rating, id, seasons }) => {
   const MOVIE_DETAILS_URL =
     `https://api.themoviedb.org/3/movie/${id}?` + process.env.REACT_APP_API_KEY;
 
-  const { data: details } = useQuery(["movieDetails"], async () => {
+  const { data } = useQuery(["movieDetails"], async () => {
     const data = await (await fetch(`${MOVIE_DETAILS_URL}`)).json();
     return data;
   });
@@ -37,8 +37,8 @@ const Card = ({ title, img, rating, id, seasons }) => {
           </S.RatingDiv>
         </S.Ratings>
         <S.Div>
-          {details?.genres?.map(({ name }) => (
-            <S.Text>{name}</S.Text>
+          {data?.genres?.map(({ name, id }) => (
+            <S.Text key={id}>{name}</S.Text>
           ))}
         </S.Div>
       </S.Description>
