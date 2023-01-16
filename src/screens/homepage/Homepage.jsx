@@ -1,6 +1,5 @@
 import React from "react";
 import * as S from "./Homepage.styles";
-import poster from "../../assets/images/poster.svg";
 import imdb from "../../assets/images/imdb.svg";
 import rottenTomatoes from "../../assets/images/rottenTomatoes.svg";
 import Navbar from "../../components/Navbar/Navbar";
@@ -8,19 +7,37 @@ import FeaturedMovies from "../../components/FeaturedMovies/FeaturedMovies";
 import NewArrival from "../../components/NewArrival/NewArrival";
 import FeaturedCast from "../../components/FeatuedCasts/FeaturedCast";
 import Footer from "../../components/Footer/Footer";
+import { useQuery } from "react-query";
 
 const Homepage = () => {
+  const API_URL =
+    "https://api.themoviedb.org/3/movie/now_playing?" +
+    process.env.REACT_APP_API_KEY;
+
+  const { data } = useQuery(["data"], async () => {
+    const data = await (await fetch(`${API_URL}`)).json();
+    return data;
+  });
+
+  const IMG_URL = "https://image.tmdb.org/t/p/w500";
+
+  const moviePoster = data?.results[0]?.poster_path;
+
   return (
     <>
-      <S.Container style={{ backgroundImage: `url('${poster}')` }}>
+      <S.Container
+        style={{
+          backgroundImage: `url('${IMG_URL + moviePoster}')`,
+        }}
+      >
         <Navbar />
         <S.Wrapper>
           <S.DescriptionBox>
-            <S.Title>John Wick 3: Parabellum</S.Title>
+            <S.Title>{data?.results[0]?.title}</S.Title>
             <S.RatingsContainer>
               <S.Ratings>
                 <S.Image src={imdb} alt="Imdb" />
-                <S.RateNumber>86.0/100</S.RateNumber>
+                <S.RateNumber>{data?.results[0]?.vote_average}</S.RateNumber>
               </S.Ratings>
               <S.Ratings>
                 <S.Image src={rottenTomatoes} alt="Rotten Tomatoes" />
@@ -28,9 +45,7 @@ const Homepage = () => {
               </S.Ratings>
             </S.RatingsContainer>
             <S.MovieDescription>
-              John Wick is on the run after killing a member of the
-              international assassins' guild, and with a $14 million price tag
-              on his head, he is the target of hit men and women everywhere.
+              {data?.results[0]?.overview}
             </S.MovieDescription>
             <S.Button>
               <S.StyledPlay />

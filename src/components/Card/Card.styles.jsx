@@ -24,7 +24,12 @@ export const Description = styled.div`
   gap: 12px;
 `;
 
-export const Text = styled.p`
+export const Div = styled.div`
+  display: flex;
+  gap: 8px;
+`;
+
+export const Text = styled.span`
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;

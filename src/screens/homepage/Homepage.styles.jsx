@@ -27,7 +27,7 @@ export const RatingsContainer = styled.div`
 export const Ratings = styled.div`
   display: flex;
   gap: 10px;
-  alignitems: center;
+  align-items: center;
 `;
 
 export const Image = styled.img``;

@@ -30,7 +30,6 @@ const Navbar = () => {
     fetchItems();
   });
 
-  console.log(name.name, "user");
   return (
     <S.Container>
       <S.Div>

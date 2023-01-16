@@ -8,26 +8,30 @@ import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import { PrivateRoute } from "./PrivateRoute";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 function App() {
+  const queryClient = new QueryClient();
   return (
     <>
       <BrowserRouter>
         <GlobalStyle />
-        <Provider store={store}>
-          <Routes>
-            <Route path="/" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/home"
-              element={
-                <PrivateRoute>
-                  <Homepage />
-                </PrivateRoute>
-              }
-            />
-          </Routes>
-        </Provider>
+        <QueryClientProvider client={queryClient} contextSharing={true}>
+          <Provider store={store}>
+            <Routes>
+              <Route path="/" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route
+                path="/home"
+                element={
+                  <PrivateRoute>
+                    <Homepage />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+          </Provider>
+        </QueryClientProvider>
       </BrowserRouter>
       <ToastContainer />
     </>
