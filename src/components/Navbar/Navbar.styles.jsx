@@ -12,6 +12,7 @@ export const Div = styled.div`
   display: flex;
   gap: 24px;
   align-items: center;
+  position: relative;
 `;
 
 export const SearchContainer = styled.div`
@@ -67,4 +68,23 @@ export const MoviesListDiv = styled.div`
 
 export const MoviesList = styled.p`
   padding: 2.5px 0px;
+`;
+
+export const IconButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
+
+export const LogoutButton = styled.button`
+  position: absolute;
+  background-color: #be123c;
+  border: none;
+  right: 0;
+  top: 50px;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
 `;
