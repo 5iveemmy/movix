@@ -54,3 +54,17 @@ export const Name = styled.h2`
   line-height: 24px;
   color: #f7f7f7;
 `;
+
+export const MoviesListDiv = styled.div`
+  background-color: #be123c;
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+`;
+
+export const MoviesList = styled.p`
+  padding: 2.5px 0px;
+`;
