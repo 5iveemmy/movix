@@ -10,9 +10,7 @@ const FeaturedCast = () => {
   const movieId = queryData?.results[0]?.id;
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-  const API_URL =
-    `https://api.themoviedb.org/3/movie/${movieId}/credits?` +
-    process.env.REACT_APP_API_KEY;
+  const API_URL = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=61dab464da90e05f4f4c3a6362670387`;
 
   const { data } = useQuery(["casts"], async () => {
     const data = await (await fetch(`${API_URL}`)).json();

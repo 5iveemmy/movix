@@ -28,7 +28,7 @@ const ExclusiveVideos = () => {
     <Category header="Exclusive Videos">
       <HorizontalSlider>
         {exclusiveData.map(({ image, title }) => (
-          <S.Container exclusive>
+          <S.Container exclusive key={image}>
             <div>
               <S.Image src={image} alt="" />
             </div>

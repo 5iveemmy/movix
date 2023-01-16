@@ -9,8 +9,7 @@ import { useQuery } from "react-query";
 const Card = ({ title, img, rating, id, seasons }) => {
   const IMG_URL = "https://image.tmdb.org/t/p/w500";
 
-  const MOVIE_DETAILS_URL =
-    `https://api.themoviedb.org/3/movie/${id}?` + process.env.REACT_APP_API_KEY;
+  const MOVIE_DETAILS_URL = `https://api.themoviedb.org/3/movie/${id}?api_key=61dab464da90e05f4f4c3a6362670387`;
 
   const { data } = useQuery(["movieDetails"], async () => {
     const data = await (await fetch(`${MOVIE_DETAILS_URL}`)).json();

@@ -17,7 +17,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const SEARCH_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?${process.env.REACT_APP_API_KEY}&query=${value}`;
+  const SEARCH_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?api_key=61dab464da90e05f4f4c3a6362670387&query=${value}`;
 
   useQuery(
     ["movies"],
