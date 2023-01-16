@@ -22,8 +22,8 @@ const FeaturedCast = () => {
   return (
     <Category header="Featured Casts">
       <HorizontalSlider>
-        {data?.cast?.map(({ name, profile_path }) => (
-          <S.Container>
+        {data?.cast?.map(({ name, profile_path, id }) => (
+          <S.Container key={id}>
             <div>
               <S.Image src={IMG_URL + profile_path} alt="" />
             </div>
